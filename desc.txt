@@ -1,0 +1,30 @@
+In the skeleton application, we will add the following use cases with user CRUD and auth functionality implementations:
+Sign up: Users can register by creating a new account using an email address.
+User list: Any visitor can see a list of all registered users.
+Authentication: Registered users can sign-in and sign-out.
+Protected user profile: Only registered users can view individual user details after signing in.
+Authorized user edit and delete: Only a registered and authenticated user can edit or remove their own user account details.
+With these features, we will have a simple working web application that supports user accounts. We will start building this basic web application with the backend implementation, then integrate a React frontend to complete the full stack.
+
+.babelrc
+Установка targets.node на current указывает Babel на компиляцию с текущей версией Node
+и позволяет нам использовать такие выражения, как async / await, в нашем внутреннем коде.
+
+установка webpack -
+npm install --save-dev webpack webpack-cli webpack-node-externals
+
+
+В файле config / config.js мы определим некоторые переменные, относящиеся к конфигурации на стороне сервера,
+которые будут использоваться в коде, но не должны быть жестко закодированы как лучшая практика,
+а также в целях безопасности.
+
+
+Advanced REST Client для Chrome - google - проверка запросов без клиента
+Используя ARC, мы продемонстрируем ожидаемое поведение для пяти вариантов использования, чтобы мы могли проверить
+ реализованные конечные точки API.
+
+Обратите внимание, как в возвращаемых объектах пользователя отображаются только _id, имя, адрес электронной почты
+и созданные значения полей, но не значения соли или hashed_password, которые также присутствуют в фактических
+документах, хранящихся в базе данных. Запрос извлекает только выбранные поля, которые мы указали в поисковом запросе
+Mongoose, который мы сделали в методе контроллера списка. Это упущение также имеет место при выборке одного
+пользователя.
